@@ -836,7 +836,7 @@ class nvidia_smi:
       count = 0
       try:
           pages = nvmlDeviceGetRetiredPages(handle, cause)
-          count = sum(map(len, pages)) #[py2] count = nvidia_smi.__toString(len(pages))
+          count = len(pages)
       except NVMLError as err:
           error = nvidia_smi.__handleError(err)
           pages = None
